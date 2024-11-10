@@ -1,5 +1,6 @@
 #!/bin/bash
-# Description: Netcat Listener on Port 443
+# Description: Netcat Listener on Port 443 in a screen session
 # Place this script in /etc/init.d/ to run on startup
 
-/usr/bin/nc -nlvp 443
+# Start the listener in a detached screen session
+/usr/bin/screen -dmS nc_listener /usr/bin/nc -nlvp 443
